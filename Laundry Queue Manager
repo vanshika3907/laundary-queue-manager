@@ -1,0 +1,33 @@
+
+About the Project
+
+Laundry Queue Manager is a web-based system designed to manage laundry orders, tokens, and pickup status.
+
+Features
+
+- Manage laundry orders
+- Track token numbers
+- Check laundry pickup status
+- Simple and user-friendly interface
+
+Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+
+Project Files
+
+- "index.html" – Website structure
+- "style.css" – Website design
+- "script.js" – Website functionality
+
+How to Run
+
+Open the "index.html" file in a web browser, or visit the deployed website:
+
+https://vanshika3907.github.io/laundry-queue-manager/
+
+Project Purpose
+
+The purpose of this project is to make laundry order management easier and more organized.
