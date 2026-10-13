@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Laundry Queue & Pickup Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>🧺 Laundry</h2>
+
+        <nav>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#new-order">New Order</a>
+            <a href="#all-orders">All Orders</a>
+            <a href="#ready-orders">Ready for Pickup</a>
+            <a href="#delivered-orders">Delivered</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="dashboard" class="main-content">
+
+        <!-- Header -->
+        <header>
+            <h1>Laundry Queue & Pickup Manager</h1>
+            <p>Manage laundry orders from submission to pickup.</p>
+        </header>
+
+        <!-- Dashboard Cards -->
+        <section class="dashboard-cards">
+
+            <div class="card">
+                <h3>Total Orders</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card">
+                <h3>In Queue</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card">
+                <h3>Washing</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card">
+                <h3>Ready</h3>
+                <p>0</p>
+            </div>
+
+            <div class="card">
+                <h3>Delivered</h3>
+                <p>0</p>
+            </div>
+
+        </section>
+
+        <!-- New Laundry Order -->
+        <section class="order-form-section" id="new-order">
+
+            <h2>New Laundry Order</h2>
+
+            <form id="laundryForm">
+
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName"
+                        placeholder="Enter student name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="roomNumber">Room Number</label>
+                    <input type="text" id="roomNumber"
+                        placeholder="Enter room number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="contactNumber">Contact Number</label>
+                   
+<input
+    type="tel"
+    id="contactNumber"
+    placeholder="Enter 10-digit contact number"
+    pattern="[0-9]{10}"
+    maxlength="10"
+    minlength="10"
+    inputmode="numeric"
+    title="Please enter exactly 10 digits."
+    required
+>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="clothes">Number of Clothes</label>
+                    <input type="number" id="clothes"
+                        placeholder="Enter number of clothes"
+                        min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="weight">Weight (kg)</label>
+                    <input type="number" id="weight"
+                        placeholder="Enter weight"
+                        min="0.1" step="0.1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="service">Service Type</label>
+                    <select id="service" required>
+                        <option value="">Select Service</option>
+                        <option value="Wash">Wash</option>
+                        <option value="Wash + Iron">Wash + Iron</option>
+                        <option value="Iron Only">Iron Only</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pickupDate">Pickup Date</label>
+                    <input type="date" id="pickupDate" required>
+                </div>
+
+                <button type="submit">➕ Add Laundry Order</button>
+
+            </form>
+        </section>
+
+        <!-- Recent Laundry Orders -->
+        <section class="orders-section" id="all-orders">
+
+            <h2>Recent Laundry Orders</h2>
+
+            <div class="filter-box">
+                <select id="statusFilter">
+                    <option value="All">All Orders</option>
+                    <option value="In Queue">In Queue</option>
+                    <option value="Washing">Washing</option>
+                    <option value="Ready for Pickup">Ready for Pickup</option>
+                    <option value="Delivered">Delivered</option>
+                </select>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="searchInput"
+                    placeholder="🔍 Search by name, room or token...">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Token</th>
+                            <th>Student</th>
+                            <th>Room</th>
+                            <th>Clothes</th>
+                            <th>Weight</th>
+                            <th>Service</th>
+                            <th>Pickup Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="ordersTableBody">
+                        <!-- Orders appear here using JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>

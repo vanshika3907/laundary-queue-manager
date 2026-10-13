@@ -1,0 +1,321 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    display: flex;
+    min-height: 100vh;
+    color: #111827;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 230px;
+    min-width: 230px;
+    min-height: 100vh;
+    background: #1f2937;
+    padding: 25px 15px;
+    flex-shrink: 0;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.sidebar a:hover {
+    background: #374151;
+}
+
+/* Main Content */
+
+.main-content {
+    flex: 1;
+    min-width: 0;
+    width: calc(100% - 230px);
+    padding: 25px;
+    display: grid;
+    grid-template-columns: minmax(320px, 0.9fr) minmax(0, 1.6fr);
+    gap: 20px;
+    align-content: start;
+}
+
+.order-form-section,
+.orders-section {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Header */
+
+.main-content header {
+    grid-column: 1 / -1;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* Dashboard Cards */
+
+.dashboard-cards {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    min-width: 0;
+}
+
+.card h3 {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Order Form */
+
+.order-form-section {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    min-width: 0;
+}
+
+.order-form-section h2,
+.orders-section h2 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+#laundryForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-width: 0;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+#laundryForm button {
+    grid-column: 1 / -1;
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#laundryForm button:hover {
+    background: #1d4ed8;
+}
+
+/* Recent Laundry Orders */
+
+.orders-section {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    min-width: 0;
+}
+
+.search-box {
+    margin-bottom: 15px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.orders-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.orders-section th,
+.orders-section td {
+    padding: 12px 9px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.orders-section th {
+    background: #f3f4f6;
+    font-weight: bold;
+}
+
+.orders-section tr:hover {
+    background: #f9fafb;
+}
+
+/* Smaller Screens */
+
+@media (max-width: 1100px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content header,
+    .dashboard-cards {
+        grid-column: 1 / -1;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-width: 0;
+        min-height: auto;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #laundryForm {
+        grid-template-columns: 1fr;
+    }
+
+    #laundryForm button {
+        grid-column: 1;
+    }
+}
+
+/* Emerald Fresh Theme */
+
+body {
+    background: #EAF5EE;
+    color: #243B32;
+}
+
+.sidebar {
+    background: #123D32;
+}
+
+.sidebar a:hover {
+    background: #187A61;
+}
+
+.card,
+.order-form-section,
+.orders-section {
+    background: #FFFFFF;
+    border: 1px solid #D5E8DC;
+    box-shadow: 0 4px 12px rgba(18, 61, 50, 0.08);
+}
+
+.card h3 {
+    color: #527064;
+}
+
+.card p {
+    color: #187A61;
+}
+
+#laundryForm button {
+    background: #187A61;
+}
+
+#laundryForm button:hover {
+    background: #123D32;
+}
+
+header p {
+    color: #527064;
+}
+
+.orders-section th {
+    background: #E1F0E6;
+    color: #123D32;
+}
+
+.orders-section tr:hover {
+    background: #F2F9F4;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.search-box input:focus {
+    outline: 2px solid #55A887;
+    border-color: #187A61;
+}
